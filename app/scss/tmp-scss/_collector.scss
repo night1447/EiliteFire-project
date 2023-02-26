@@ -1,0 +1,209 @@
+.collector {
+  position: relative;
+  padding: 100px;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 80%;
+    z-index: -1;
+    top: 50%;
+    right: 0;
+    height: 100%;
+    background: rgba(18, 18, 18, 0.5);
+    filter: blur(125px);
+    border-radius: 300px;
+    transform: matrix(1, 0, 0, -1, 0, 0) translateY(50%);
+  }
+
+  &__inner {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 85px;
+    width: 100%;
+    margin-bottom: 72px;
+    @include adpt($desm-r) {
+      gap: 64px;
+    }
+    @include adpt($tab-r) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__blur {
+    display: none;
+    position: absolute;
+    width: 1316px;
+    height: 739px;
+    top: 0;
+    right: -20%;
+    z-index: -1;
+    background: rgba(18, 18, 18, 0.5);
+    filter: blur(125px);
+    border-radius: 300px;
+    transform: matrix(1, 0, 0, -1, 0, 0);
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+  &__title {
+    margin-bottom: 64px;
+    @include adpt($stab-r){
+      margin-bottom: 48px;
+    }
+    @include adpt($bmob-r){
+      font-size: 21px;
+      margin-bottom: 32px;
+    }
+  }
+
+  &__block {
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__image {
+    height: 100%;
+    width: 100%;
+    min-height: 350px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include adpt($bmob-r) {
+      background-size: contain;
+      min-height: 200px;
+    }
+  }
+
+  &__range-slider {
+    display: grid;
+    gap: 40px;
+    align-items: center;
+    grid-template-columns: auto 1fr auto;
+    font-size: 18px;
+    font-weight: 500;
+    width: 100%;
+  }
+
+  &__functions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 140px;
+    row-gap: 8px;
+    @include adpt($stab-r){
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__subtitle {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 0.2em;
+    font-weight: 500;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+
+    &_big {
+      font-size: 12px;
+    }
+  }
+
+  &__swiper-shell {
+    width: max-content;
+  }
+
+  &__swiper {
+    height: 100px;
+    width: 315px;
+  }
+
+  &__swiper-slide {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 60px;
+  }
+
+  &__swiper-button {
+    &_next {
+      right: 0;
+      top: var(--swiper-navigation-top-offset, calc(50% - 8px));
+    }
+
+    &_prev {
+      left: 0;
+      top: var(--swiper-navigation-top-offset, calc(50% - 8px));
+    }
+  }
+
+  &__swiper .swiper-pagination-bullet {
+    width: 9px;
+    height: 2px;
+    background-color: #464239;
+    border-radius: 0;
+
+    &-active {
+      background-color: $orange;
+    }
+  }
+
+  &__function {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__result {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    @include adpt($adpt-r) {
+     display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    @include adpt($bmob-r) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    @include adpt($stab-r) {
+      &:not(:last-child) {
+        margin-bottom: 24px;
+      }
+    }
+  }
+
+  &__value {
+    font-size: 24px;
+    @include adpt($bmob-r){
+      font-size: 18px;
+    }
+    &_big {
+      letter-spacing: 0.05em;
+      font-size: 36px;
+      font-weight: 300;
+      color: $orange;
+      @include adpt($bmob-r){
+        font-size: 28px;
+      }
+    }
+
+    &_color {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+    }
+  }
+  @include adpt($desm-r){
+    padding: 0;
+    margin-bottom: 64px;
+  }
+}

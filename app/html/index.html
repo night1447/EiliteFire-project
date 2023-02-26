@@ -1,0 +1,43 @@
+
+@include('components/_head.html')
+@include('components/_header.html')
+<div class="bg">
+</div>
+<main class="main">
+    @include('components/_first-screen.html')
+    @include('components/_about.html')
+    @include('components/_feature.html')
+    @include('components/_campfire.html')
+    @include('components/_configuration.html')
+    @include('components/_get.html')
+    <section class="characteristic">
+        <div class="container">
+            <div class="characteristic__title title">
+                Есть задача? Есть решение!
+            </div>
+            <ul class="characteristic__list">
+                <li class="characteristic__item"></li>
+                <li class="characteristic__item"></li>
+                <li class="characteristic__item"></li>
+            </ul>
+        </div>
+    </section>
+    <section class="characteristic">
+        <div class="container">
+            <div class="characteristic__title title">
+                Почемы мы можем многое?
+                Свои люди. Свои станки. Своя лаборатория
+            </div>
+            <ul class="characteristic__list">
+                <li class="characteristic__item"></li>
+                <li class="characteristic__item"></li>
+                <li class="characteristic__item"></li>
+            </ul>
+        </div>
+    </section>
+    @include('components/_collector.html')
+
+</main>
+
+@include('components/_footer.html')
+@include('components/_footer-scripts.html')

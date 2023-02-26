@@ -1,0 +1,128 @@
+.configuration {
+  margin-bottom: 50px;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    @include adpt($desm-r) {
+      gap: 60px;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__column {
+    position: relative;
+    @include adpt($desm-r) {
+      margin: 0 auto;
+    }
+  }
+
+  &__blur {
+    position: absolute;
+    width: 570px;
+    height: 284px;
+    top: 40%;
+    z-index: -2;
+    transform: translateY(-100%);
+    background: #000000;
+    filter: blur(100px);
+    border-radius: 300px;
+    @include adpt($bmob-r){
+      width: 100%;
+    }
+  }
+
+  &__title {
+    margin-bottom: 25px;
+  }
+
+  &__description {
+    margin-bottom: 32px;
+    line-height: 22px;
+  }
+
+  &__subtitle {
+    color: $gray;
+    font-size: 18px;
+    margin-bottom: 24px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 48px;
+  }
+
+  &__image {
+    min-height: 167px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-bottom: 24px;
+    @include adpt($bmob-r){
+      width: 100%;
+      min-height: 120px;
+    }
+  }
+
+  &__block {
+    &:not(:last-child) {
+      margin-bottom: 64px;
+    }
+  }
+
+  &__swiper-shell {
+    position: relative;
+    max-width: 547px;
+    @include adpt($bmob-r){
+      max-width: 400px;
+    }
+    @include adpt(400){
+      max-width: 320px;
+    }
+  }
+
+  &__buttons {
+    position: absolute;
+    left: 45px;
+    bottom: 45px;
+    height: 18px;
+    width: 80px;
+    @include adpt($stab-r){
+      left: 24px;
+      bottom: 24px;
+    }
+  }
+
+  &__swiper {
+    max-width: 100%;
+  }
+
+  &__swiper-slide {
+    width: 100%;
+    height: 100%;
+    min-height: 346px;
+    background: $black;
+    @include adpt($bmob-r){
+      min-height: 250px;
+    }
+  }
+
+  &__features {
+    display: flex;
+    flex-direction: column;
+    @include adpt($mtab-r){
+      word-wrap: anywhere;
+    }
+  }
+
+  &__feature {
+    &:not(:last-child) {
+      margin-bottom: 4px;
+    }
+  }
+  @include adpt($bmob-r){
+    margin-bottom: 64px;
+  }
+}

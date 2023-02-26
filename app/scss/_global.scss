@@ -1,0 +1,393 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Lab Grotesque', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.3;
+  background: $bg;
+  color: $white;
+  overflow-x: hidden;
+  z-index: 1;
+}
+
+.container {
+  max-width: 1194px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 0;
+  height: 0;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.bg {
+  position: fixed;
+  width: 100%;
+  z-index: -1;
+  height: 100%;
+  background: url("../images/bg.png") center center/cover no-repeat;
+  opacity: 0.2;
+}
+
+.title {
+  font-size: 40px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  background: linear-gradient(249.07deg, #FFFFFF 36.17%, rgba(255, 255, 255, 0) 97.71%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  @include adpt($mtab-r) {
+    font-size: 32px;
+  }
+  @include adpt($bmob-r) {
+    font-size: 28px;
+  }
+}
+
+.subtitle {
+  font-size: 24px;
+}
+
+.btn {
+  padding: 14px 55px 16px;
+  background: url("../images/btn-bg.png") center center/cover, $orange;
+  color: $black;
+  transition: background-color 0.5s, box-shadow 0.5s;
+
+  &:hover {
+    background-color: #f8bd43;
+    box-shadow: 0 0 31px 3px rgba(248, 189, 67, 0.36);
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  &__img {
+    width: 140px;
+    height: 70px;
+    @include adpt($bmob-r) {
+      width: 120px;
+      height: 60px;
+    }
+  }
+
+  &__text {
+    font-size: 12px;
+    max-width: 100px;
+    margin-left: 40px;
+    letter-spacing: 0.05em;
+    color: $gray;
+    @include adpt($bmob-r) {
+      margin-left: 12px;
+      font-size: 10px;
+    }
+  }
+}
+
+.lg {
+  position: relative;
+  background-color: $orange;
+  transition: 0.5s background-color, 0.5s box-shadow;
+
+  &:hover {
+    background-color: #f8bd43;
+    box-shadow: 0 0 31px 3px rgba(248, 189, 67, 0.36);
+  }
+
+  &::before, &::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0.8;
+  }
+
+  &::before {
+    background: linear-gradient(45deg, rgba(255, 217, 196, 1), rgba(255, 255, 255, 0.5), rgba(255, 207, 125, 1));
+  }
+
+  &::after {
+    background: linear-gradient(30deg, rgba(255, 103, 82, 1), rgba(249, 139, 77, 1), rgba(255, 207, 125, 1) 85%);
+  }
+}
+
+/*generated with Input range slider CSS style generator (version 20211225)
+https://toughengineer.github.io/demo/slider-styler*/
+input[type=range].styled-slider {
+  height: 2.2em;
+  -webkit-appearance: none;
+}
+
+/*progress support*/
+input[type=range].styled-slider.slider-progress {
+  --range: calc(var(--max) - var(--min));
+  --ratio: calc((var(--value) - var(--min)) / var(--range));
+  --sx: calc(0.5 * 30px + var(--ratio) * (100% - 30px));
+}
+
+input[type=range].styled-slider:focus {
+  outline: none;
+}
+
+/*webkit*/
+input[type=range].styled-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 2px;
+  background: $orange;
+  border: none;
+  box-shadow: 0 0 2px black;
+  margin-top: calc(2px * 0.5 - 30px * 0.5);
+}
+
+input[type=range].styled-slider::-webkit-slider-runnable-track {
+  height: 2px;
+  border: none;
+  border-radius: 0.5em;
+  background: #646464;
+  box-shadow: none;
+}
+
+input[type=range].styled-slider::-webkit-slider-thumb:hover {
+  background: $orange;
+}
+
+input[type=range].styled-slider:hover::-webkit-slider-runnable-track {
+  background: #646464;
+}
+
+input[type=range].styled-slider::-webkit-slider-thumb:active {
+  background: $orange;
+}
+
+input[type=range].styled-slider:active::-webkit-slider-runnable-track {
+  background: #646464;
+}
+
+input[type=range].styled-slider.slider-progress::-webkit-slider-runnable-track {
+  background: linear-gradient($orange, $orange) 0/var(--sx) 100% no-repeat, #646464;
+}
+
+input[type=range].styled-slider.slider-progress:hover::-webkit-slider-runnable-track {
+  background: linear-gradient($orange, $orange) 0/var(--sx) 100% no-repeat, #646464;
+}
+
+input[type=range].styled-slider.slider-progress:active::-webkit-slider-runnable-track {
+  background: linear-gradient($orange, $orange) 0/var(--sx) 100% no-repeat, #646464;
+}
+
+/*mozilla*/
+input[type=range].styled-slider::-moz-range-thumb {
+  width: 30px;
+  height: 30px;
+  border-radius: 2px;
+  background: $orange;
+  border: none;
+  box-shadow: 0 0 2px black;
+}
+
+input[type=range].styled-slider::-moz-range-track {
+  height: 2px;
+  border: none;
+  border-radius: 0.5em;
+  background: #646464;
+  box-shadow: none;
+}
+
+input[type=range].styled-slider::-moz-range-thumb:hover {
+  background: $orange;
+}
+
+input[type=range].styled-slider:hover::-moz-range-track {
+  background: #646464;
+}
+
+input[type=range].styled-slider::-moz-range-thumb:active {
+  background: $orange;
+}
+
+input[type=range].styled-slider:active::-moz-range-track {
+  background: #646464;
+}
+
+input[type=range].styled-slider.slider-progress::-moz-range-track {
+  background: linear-gradient($orange, $orange) 0/var(--sx) 100% no-repeat, #646464;
+}
+
+input[type=range].styled-slider.slider-progress:hover::-moz-range-track {
+  background: linear-gradient($orange, $orange) 0/var(--sx) 100% no-repeat, #646464;
+}
+
+input[type=range].styled-slider.slider-progress:active::-moz-range-track {
+  background: linear-gradient($orange, $orange) 0/var(--sx) 100% no-repeat, #646464;
+}
+
+/*ms*/
+input[type=range].styled-slider::-ms-fill-upper {
+  background: transparent;
+  border-color: transparent;
+}
+
+input[type=range].styled-slider::-ms-fill-lower {
+  background: transparent;
+  border-color: transparent;
+}
+
+input[type=range].styled-slider::-ms-thumb {
+  width: 30px;
+  height: 30px;
+  border-radius: 2px;
+  background: $orange;
+  border: none;
+  box-shadow: 0 0 2px black;
+  margin-top: 0;
+  box-sizing: border-box;
+}
+
+input[type=range].styled-slider::-ms-track {
+  height: 2px;
+  border-radius: 0.5em;
+  background: #646464;
+  border: none;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+input[type=range].styled-slider::-ms-thumb:hover {
+  background: $orange;
+}
+
+input[type=range].styled-slider:hover::-ms-track {
+  background: #646464;
+}
+
+input[type=range].styled-slider::-ms-thumb:active {
+  background: $orange;
+}
+
+input[type=range].styled-slider:active::-ms-track {
+  background: #646464;
+}
+
+input[type=range].styled-slider.slider-progress::-ms-fill-lower {
+  height: 2px;
+  border-radius: 0.5em 0 0 0.5em;
+  margin: -undefined 0 -undefined -undefined;
+  background: $orange;
+  border: none;
+  border-right-width: 0;
+}
+
+input[type=range].styled-slider.slider-progress:hover::-ms-fill-lower {
+  background: $orange;
+}
+
+input[type=range].styled-slider.slider-progress:active::-ms-fill-lower {
+  background: $orange;
+}
+
+
+.swiper-button {
+  &-prev, &-next {
+    width: 18px;
+    height: 18px;
+
+    &::after {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      content: "";
+      background: url("../images/arrow-left-icon.svg") center center/contain no-repeat;
+
+    }
+  }
+
+  &-next {
+    &::after {
+      transform: rotate(-180deg);
+    }
+  }
+}
+
+.checkbox {
+  &__label {
+    display: inline-block;
+    position: relative;
+  }
+
+  &__checked {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    border: 1px solid #CEB787;
+
+    &::after, &::before {
+      position: absolute;
+      content: "";
+      width: 8px;
+      height: 2px;
+      left: 50%;
+      top: 50%;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.5s opacity, visibility 0.5s;
+      transform: translate(-50%, -50%);
+      background-color: $black;
+    }
+
+    &::before {
+      transform: rotate(-90deg);
+      top: calc(50% - 1px);
+      left: calc(50% - 4px);
+    }
+  }
+
+  &__input:checked ~ &__checked {
+    background-color: #CEB787;
+
+    &::before, &::after {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__input {
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.main {
+  width: 100%;
+}
